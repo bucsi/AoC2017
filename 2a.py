@@ -22,5 +22,6 @@ for i in range(len(be)):
 			max=be[i][j]
 	sordiff.append(max-min)
 
+print("sordiff elemszáma:", len(sordiff))
 print(sum(sordiff))
 

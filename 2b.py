@@ -1,6 +1,7 @@
 #!/bin/pypy3
+import itertools
 
-with open("be2a.txt", "r") as f:	 #beolvasás
+with open("be2.txt", "r") as f:		 #beolvasás
 	seged=f.readlines()
 
 be=[]
@@ -8,19 +9,15 @@ for sor in seged:			#mátrixba szétszedés
 	asor = sor.split("\n")[0]
 	be.append(asor.split("\t"))
 
-sordiff=[]
+sordiff=0
 
 for i in range(len(be)):		
 	for j in range(len(be[i])):
 		be[i][j]=int(be[i][j])	#konvertálás intre
-	min=be[i][0]
-	max=be[i][0]
-	for j in range(1, len(be[i])):	#minmax kiválasztás
-		if be[i][j]<min:
-			min=be[i][j]
-		if be[i][j]>max:
-			max=be[i][j]
-	sordiff.append(max-min)
+	
+	for j in itertools.combinations(be[i], 2):
+		if max(j)%min(j)==0:
+			sordiff+=int(max(j)/min(j))	
 
-print(sum(sordiff))
+print(sordiff)
 
