@@ -12,4 +12,6 @@ for i in range(len(be)):
 		kov=i+1
 	if be[i]==be[kov]:
 		sum+=be[i]
+print("A bemenet hossza:", len(be))
+print()
 print(sum)
