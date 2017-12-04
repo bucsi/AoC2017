@@ -1,6 +1,6 @@
 #!/bin/pypy3
 
-with open("be2.txt", "r") as f:		 #beolvasás
+with open("be2a.txt", "r") as f:	 #beolvasás
 	seged=f.readlines()
 
 be=[]
